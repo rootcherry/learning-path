@@ -17,7 +17,7 @@ function firstRecurringCharacter(input) {
     }
   }
   return undefined;
-}
+} // O(n^2)
 
 function firstRecurringCharacter2(input) {
   let map = {};
@@ -29,7 +29,7 @@ function firstRecurringCharacter2(input) {
     }
   }
   return undefined;
-}
+} // O(n)
 
 firstRecurringCharacter2([1, 5, 5, 1, 3, 4, 6]);
 
