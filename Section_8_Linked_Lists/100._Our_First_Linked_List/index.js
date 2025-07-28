@@ -47,27 +47,55 @@ class LinkedList {
     return this;
   }
 
+  // insert() - my solution
+  // insert(index, value) {
+  //   const newNode = new Node(value);
+  //   if (index === 0) {
+  //     this.prepend(value);
+  //     return this;
+  //   }
+
+  //   let node = this.head;
+  //   let counter = 0;
+
+  //   while (node != null) {
+  //     if (counter === index - 1) {
+  //       newNode.next = node.next;
+  //       node.next = newNode;
+  //       this.length++;
+  //       break;
+  //     }
+  //     counter++;
+  //     node = node.next;
+  //   }
+  //   return this;
+  // }
+
   insert(index, value) {
-    const newNode = new Node(value);
-    if (index === 0) {
-      this.prepend(value);
-      return this;
+    // check params
+    if (index >= this.length) {
+      return this.append(value);
     }
 
-    let node = this.head;
+    const node = new Node(value);
+    const leader = this.traverseToIndex(index - 1);
+    const holdingPointer = leader.next;
+    leader.next = node;
+    node.next = holdingPointer;
+    this.length++;
+    return console.log(this.printList());
+  }
+
+  traverseToIndex(index) {
+    // check params
     let counter = 0;
+    let currentNode = this.head;
 
-    while (node != null) {
-      if (counter === index - 1) {
-        newNode.next = node.next;
-        node.next = newNode;
-        this.length++;
-        break;
-      }
+    while (counter !== index) {
+      currentNode = currentNode.next;
       counter++;
-      node = node.next;
     }
-    return this;
+    return currentNode;
   }
 
   printList() {
@@ -86,6 +114,9 @@ const myLinkedList = new LinkedList(10);
 myLinkedList.append(5);
 myLinkedList.append(16);
 myLinkedList.prepend(1);
+// myLinkedList.printList();
 myLinkedList.insert(2, 99);
-console.log(myLinkedList.printList());
+myLinkedList.insert(20, 88);
+myLinkedList.printList();
+
 // console.log(myLinkedList);
