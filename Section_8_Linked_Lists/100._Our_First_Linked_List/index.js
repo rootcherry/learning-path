@@ -29,6 +29,15 @@ class LinkedList {
     this.tail.next = node;
     this.tail = node;
     this.length++;
+    return this;
+  }
+
+  prepend(value) {
+    let node = { value: value, next: null };
+    node.next = this.head;
+    this.head = node;
+    this.length++;
+    return this;
   }
 }
 
@@ -36,5 +45,6 @@ const myLinkedList = new LinkedList(10);
 
 myLinkedList.append(5);
 myLinkedList.append(16);
+myLinkedList.prepend(1);
 
 console.log(myLinkedList);
