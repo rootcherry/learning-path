@@ -13,6 +13,13 @@
 //   },
 // };
 
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
 class LinkedList {
   constructor(value) {
     this.head = {
@@ -25,7 +32,7 @@ class LinkedList {
   }
 
   append(value) {
-    let node = { value: value, next: null };
+    const node = new Node(value);
     this.tail.next = node;
     this.tail = node;
     this.length++;
@@ -33,7 +40,7 @@ class LinkedList {
   }
 
   prepend(value) {
-    let node = { value: value, next: null };
+    const node = new Node(value);
     node.next = this.head;
     this.head = node;
     this.length++;
