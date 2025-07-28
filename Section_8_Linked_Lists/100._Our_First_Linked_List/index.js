@@ -25,7 +25,10 @@ class LinkedList {
   }
 
   append(value) {
-    // Code here
+    let node = { value: value, next: null };
+    this.tail.next = node;
+    this.tail = node;
+    this.length++;
   }
 }
 
