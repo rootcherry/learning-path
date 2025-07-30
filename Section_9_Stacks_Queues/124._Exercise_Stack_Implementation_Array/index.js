@@ -7,18 +7,31 @@ class Node {
 
 class Stack {
   constructor() {
-    this.top = null;
-    this.bottom = null;
-    this.length = 0;
+    this.array = [];
   }
 
-  peek() {}
+  peek() {
+    return this.array[this.array.length - 1];
+  }
 
-  push(value) {}
+  push(value) {
+    return this.array.push[value];
+  }
 
-  pop() {}
+  pop() {
+    return this.array.pop();
+  }
 
-  //isEmpty
+  isEmpty() {
+    return this.array.length === 0;
+  }
 }
 
 const myStack = new Stack();
+myStack.push("google");
+myStack.push("udemy");
+myStack.push("discord");
+myStack.peek();
+myStack.pop();
+myStack.pop();
+myStack.pop();
