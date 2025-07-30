@@ -44,11 +44,11 @@ class Stack {
 
 const myStack = new Stack();
 console.log(myStack.peek());
-// console.log(myStack.push("google"));
-// console.log(myStack.push("google2"));
-// console.log(myStack.peek());
-// console.log(myStack.pop());
-// console.log(myStack.pop());
+console.log(myStack.push("google"));
+console.log(myStack.push("google2"));
+console.log(myStack.peek());
+console.log(myStack.pop());
+console.log(myStack.pop());
 //Discord
 //ZTM
 //google
